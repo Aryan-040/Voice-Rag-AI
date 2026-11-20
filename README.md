@@ -1,4 +1,4 @@
-# 🎙️ Voice RAG AI (Speech-Enabled Retrieval-Augmented Generation)
+# Voice RAG AI (Speech-Enabled Retrieval-Augmented Generation)
 
 This project implements a **voice-enabled Retrieval-Augmented Generation (RAG) system** that allows users to:
 
@@ -12,7 +12,7 @@ The system is designed to support **document-grounded question answering**, scal
 
 ---
 
-## 🧠 How This Project Works
+## How This Project Works
 
 The system follows a **two-stage RAG architecture**:
 
@@ -23,7 +23,7 @@ Instead of sending entire documents to the LLM, the system retrieves only the **
 
 ---
 
-## 🔹 1. Document Ingestion Pipeline (Offline / On Upload)
+## 1. Document Ingestion Pipeline (Offline / On Upload)
 
 When documents are uploaded, the system processes them once and stores their representations.
 
@@ -43,11 +43,11 @@ For each document, the pipeline performs:
 
 The vector store is persisted locally (or via a persistent disk in production).
 
-📁 Implemented in: `backend/services/embeddings.py`
+Implemented in: `backend/services/embeddings.py`
 
 ---
 
-## 🔹 2. Query Pipeline (Online)
+## 2. Query Pipeline (Online)
 
 At query time, the system retrieves relevant context and generates an answer.
 
@@ -71,29 +71,29 @@ The system performs the following steps:
 5. **Source Attribution**  
    Document sources are returned along with the answer
 
-📁 Implemented in: `backend/services/rag.py`
+Implemented in: `backend/services/rag.py`
 
 ---
 
-## 🔹 Voice Interaction Layer
+## Voice Interaction Layer
 
 The system also supports **voice-based interaction**:
 
-### 🎤 Speech-to-Text (STT)
+### Speech-to-Text (STT)
 - Converts spoken audio into text
 - Implemented using **OpenAI Whisper**
 
-📁 `backend/services/stt.py`
+`backend/services/stt.py`
 
-### 🔊 Text-to-Speech (TTS)
+### Text-to-Speech (TTS)
 - Converts generated answers into audio
 - Allows spoken responses
 
-📁 `backend/services/tts.py`
+`backend/services/tts.py`
 
 ---
 
-## 🔹 Why This RAG Design Works Well
+## Why This RAG Design Works Well
 
 - Prevents hallucinations by grounding answers in documents
 - Scales to large document collections
@@ -103,7 +103,7 @@ The system also supports **voice-based interaction**:
 
 ---
 
-## 🔹 Zero-Shot & Scalability Properties
+## Zero-Shot & Scalability Properties
 
 - No labeled data required
 - Handles unseen documents and questions
@@ -113,13 +113,13 @@ The system also supports **voice-based interaction**:
 
 ---
 
-# 📦 Complete Setup Guide – Voice RAG AI
+# Complete Setup Guide – Voice RAG AI
 
 This guide walks through setting up and running the **Voice RAG AI system** end-to-end.
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python **3.10+**
 - Node.js **18+**
@@ -129,7 +129,7 @@ This guide walks through setting up and running the **Voice RAG AI system** end-
 
 ---
 
-## 🚀 Step-by-Step Setup
+## Step-by-Step Setup
 
 ---
 
@@ -149,7 +149,7 @@ git clone https://github.com/your-username/voice-rag-ai.git
 cd voice-rag-ai
 ```
 
-📁 Project Structure
+Project Structure
 ```bash
 voice-rag-ai/
 ├── backend/
@@ -176,7 +176,7 @@ voice-rag-ai/
 │
 └── .gitignore
 ```
-⚙️ Backend Setup
+Backend Setup
 Create Virtual Environment
 ```
 cd backend
@@ -196,15 +196,14 @@ Run Backend
 ```
 uvicorn main:app --reload
 ```
-🌐 Frontend Setup
+Frontend Setup
 ```
 cd frontend
 npm install
 npm run dev
 ```
 
-👨‍🎓 Author
-
-Rudra Pratap Tomer
+Author
+Aryan Mukund Singh
 AI / ML & Full-Stack Developer
-Built as a learning-focused, production-ready RAG system 🚀
+Built as a learning-focused, production-ready RAG system
